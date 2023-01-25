@@ -5,6 +5,7 @@ const geocode = require("../../weather-app/utils/geocode");
 const forecost = require("../../weather-app/utils/forecast");
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 const publicDirPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
@@ -88,4 +89,4 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => console.log("Server is running at port 3000"));
+app.listen(port, () => console.log(`Server is running at port ${port}`));
